@@ -6,8 +6,29 @@
 //
 
 import UIKit
+import Twitter
 
 class TweetsTableViewController: UITableViewController {
+   
+   private var tweets = [Array<Tweet>]()
+   
+   var searchText: String? {
+      didSet {
+         tweets.removeAll()
+         tableView.reloadData()
+         searchForTweets()
+         title = searchText
+      }
+   }
+   
+   private func searchForTweets() {
+      
+   }
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      searchText = "#appleinc"
+   }
    
    // MARK: - UITableViewDataSource
    
