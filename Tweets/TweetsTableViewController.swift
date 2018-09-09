@@ -50,6 +50,8 @@ class TweetsTableViewController: UITableViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
+      tableView.estimatedRowHeight = tableView.rowHeight
+      tableView.rowHeight = UITableViewAutomaticDimension
       searchText = "#appleinc"
    }
    
