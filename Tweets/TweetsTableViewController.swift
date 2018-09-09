@@ -8,7 +8,7 @@
 import UIKit
 import Twitter
 
-class TweetsTableViewController: UITableViewController {
+class TweetsTableViewController: UITableViewController, UITextFieldDelegate {
    
    private var tweets = [Array<Twitter.Tweet>]() {
       didSet {
@@ -18,6 +18,8 @@ class TweetsTableViewController: UITableViewController {
    
    var searchText: String? {
       didSet {
+         searchTextField?.text = searchText
+         searchTextField?.resignFirstResponder()
          tweets.removeAll()
          tableView.reloadData()
          searchForTweets()
@@ -52,7 +54,19 @@ class TweetsTableViewController: UITableViewController {
       super.viewDidLoad()
       tableView.estimatedRowHeight = tableView.rowHeight
       tableView.rowHeight = UITableViewAutomaticDimension
-      searchText = "#appleinc"
+   }
+   
+   @IBOutlet weak var searchTextField: UITextField! {
+      didSet {
+         searchTextField.delegate = self
+      }
+   }
+   
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      if textField == searchTextField {
+         searchText = searchTextField.text
+      }
+      return true
    }
    
    // MARK: - UITableViewDataSource
