@@ -48,6 +48,15 @@ class DBTweetsTableViewController: TweetsTableViewController {
       }
    }
    
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if segue.identifier == "Tweeters Mentioning Search Term" {
+         if let tweetersTVC = segue.destination as? TweetersTableViewController {
+            tweetersTVC.mention = searchText
+            tweetersTVC.container = container
+         }
+      }
+   }
+   
 }
 
 
