@@ -13,7 +13,7 @@
         <!--Tweets Table View Controller-->
         <scene sceneID="Q71-Le-nLW">
             <objects>
-                <tableViewController id="zMd-zS-cnH" customClass="TweetsTableViewController" customModule="Tweets" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zMd-zS-cnH" customClass="DBTweetsTableViewController" customModule="Tweets" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xsv-NW-wS8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,6 +99,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="CM8-5H-G5l"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="SC5-oj-XtX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh:" destination="zMd-zS-cnH" eventType="valueChanged" id="EFL-Nd-kB8"/>
